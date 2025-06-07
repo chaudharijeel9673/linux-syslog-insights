@@ -35,8 +35,8 @@ The XML source of the dashboard (`dashboard_source.xml`) is placed **at the root
 - `scripts/`: contains the Python script that generated the synthetic syslog dataset.
 - `lookup_data`: contains the CSV file that maps syslog messages to event types for classification
 - `sample_data/`: contains the generated `.log` file uploaded into Splunk.
-- `screenshots/`: optional folder with full and/or per-panel visuals.
-- `queries/`: text files with saved SPL per panel for reference.
+- `screenshots/`: contains screenshots of full dashboard and per-panel visuals.
+- `queries/`: text file with saved SPL per panel for reference.
 
 ---
 
@@ -55,7 +55,7 @@ The data supports advanced SPL scenarios like `streamstats`, `join`, `timechart`
 
 ## 🚀 How to Use
 
-1. Upload the provided `simulated_linux_syslog_advanced.log` to Splunk or Execute the Python script "generate_linux_syslogs_advanced.py"
+1. Upload the provided `simulated_linux_syslog_advanced.log` to Splunk or execute the Python script "generate_linux_syslogs_advanced.py" to generate logs
 2. Assign sourcetype: `custom_linux_syslog`
 3. Apply regex field extraction for `real_host`, `process`, `severity`, `message`, and `ip`
 4. Upload the dashboard XML file via: `Settings → Dashboards → Import XML`

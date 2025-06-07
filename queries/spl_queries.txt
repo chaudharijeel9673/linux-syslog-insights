@@ -1,0 +1,67 @@
+--- Panel 1: Login Trend Over Time (Success vs Failure) ---
+
+index=sys_logs sourcetype=custom_linux_syslog
+| lookup linux_syslog_message_eventtype_classification message output event_type
+| search event_type IN ("auth_success","auth_fail")
+| timechart span=1d count by event_type
+
+--- Panel 2: Top IPs with Repeated Login Failures ---
+
+index=sys_logs sourcetype=custom_linux_syslog
+| lookup linux_syslog_message_eventtype_classification message output event_type
+| search event_type="auth_fail"
+| stats count as failure_count by ip
+| where failure_count > 20
+| sort 0 - failure_count
+
+--- Panel 3: Host-Level Authentication Outcome Summary ---
+
+index=sys_logs sourcetype=custom_linux_syslog
+| lookup linux_syslog_message_eventtype_classification message output event_type
+| search event_type IN ("auth_success","auth_fail")
+| stats count by real_host event_type
+| xyseries real_host event_type count
+
+--- Panel 4: Brute-Force Login Spike (≥5 Failures in 5 Min) ---
+
+index=sys_logs sourcetype=custom_linux_syslog "Failed password"
+| sort 0 _time
+| streamstats time_window=5m count(ip) as failed_attempts by real_host ip
+| where failed_attempts>=5
+| stats earliest(_time) as first_attempt latest(_time) as last_attempt count by real_host, ip
+| eval first_attempt=strftime(first_attempt, "%Y-%m-%d %H:%M:%S"), last_attempt=strftime(last_attempt, "%Y-%m-%d %H:%M:%S")
+
+--- Panel 5: Escalated Warnings (Within 10 Minutes) ---
+
+index=sys_logs sourcetype=custom_linux_syslog severity="WARNING"
+| rename _time as warning_time
+| fields warning_time message real_host process severity
+| join type=inner real_host process
+    [ search index=sys_logs sourcetype=custom_linux_syslog (severity="ERROR" OR severity="CRITICAL")
+    | rename _time as followup_time
+    | eval followup_severity=severity
+    | fields followup_time followup_severity real_host process ]
+| where followup_time > warning_time AND followup_time - warning_time <= 600
+| table warning_time real_host process message severity followup_time followup_severity
+| eval warning_time=strftime(warning_time, "%Y-%m-%d %H:%M:%S"), followup_time=strftime(followup_time, "%Y-%m-%d %H:%M:%S")
+| sort 0 warning_time
+
+--- Panel 6: Multi-Host High CPU Alert (5-Min Window) ---
+
+index=sys_logs sourcetype=custom_linux_syslog message="High CPU usage detected"
+| timechart span=5m dc(real_host) as high_cpu_host_count, values(real_host) as affected_hosts
+| where high_cpu_host_count >= 3
+
+--- Panel 7: Security Event Chain (Failed Login → Config Change) ---
+
+index=sys_logs sourcetype=custom_linux_syslog (message="Failed password attempt*" OR message="New SSH key added" OR message="Firewall rule updated") 
+| sort 0 _time 
+| eval event_type = case(
+    like(message, "Failed password attempt%"), "auth_fail",
+    message="New SSH key added", "security_change",
+    message="Firewall rule updated", "security_change"
+    )
+| streamstats current=f window=1 last(_time) as prev_time last(event_type) as prev_type by real_host
+| where prev_type="auth_fail" AND event_type="security_change" AND (_time - prev_time <= 600)
+| table _time real_host prev_time message
+| eval prev_time=strftime(prev_time, "%Y-%m-%d %H:%M:%S")

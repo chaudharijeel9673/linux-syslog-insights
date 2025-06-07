@@ -1,0 +1,12 @@
+message,event_type
+User session closed,session_boundary
+Disk space running low,disk
+Firewall rule updated,security_change
+Cron process crashed,process_crash
+Accepted password for user,auth_success
+Failed password attempt,auth_fail
+New SSH key added,security_change
+High CPU usage detected,cpu
+Restarted service due to crash,process_crash
+Cron job completed,cron_success
+Cron job failed to start,cron_fail

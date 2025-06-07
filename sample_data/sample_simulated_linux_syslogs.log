@@ -1,0 +1,100 @@
+2025 Mar 05 00:03:07 gateway1 kernel[3161]: [INFO] User session closed
+2025 Mar 05 00:04:43 server2 cron[1539]: [CRITICAL] High CPU usage detected
+2025 Mar 05 00:07:35 server1 postfix[8848]: [CRITICAL] New SSH key added
+2025 Mar 05 00:09:54 db01 systemd[9514]: [ERROR] Disk space running low
+2025 Mar 05 00:10:21 cache01 kernel[4524]: [WARNING] Failed password attempt from 128.149.199.94
+2025 Mar 05 00:10:48 server2 nginx[6426]: [ERROR] Cron process crashed
+2025 Mar 05 00:14:27 server2 sshd[8935]: [WARNING] Cron job failed to start
+2025 Mar 05 00:17:14 server2 nginx[529]: [INFO] User session closed
+2025 Mar 05 00:17:37 cache01 dockerd[8405]: [WARNING] Cron job failed to start
+2025 Mar 05 00:19:26 gateway1 systemd[5271]: [ERROR] Restarted service due to crash
+2025 Mar 05 00:20:27 gateway1 postfix[3346]: [CRITICAL] High CPU usage detected
+2025 Mar 05 00:22:04 db01 postfix[5339]: [CRITICAL] High CPU usage detected
+2025 Mar 05 00:23:00 server1 dockerd[5070]: [ERROR] Cron process crashed
+2025 Mar 05 00:24:05 web01 cron[7562]: [CRITICAL] Firewall rule updated
+2025 Mar 05 00:25:30 server2 nginx[8642]: [INFO] User session closed
+2025 Mar 05 00:25:32 web01 dockerd[896]: [ERROR] Restarted service due to crash
+2025 Mar 05 00:27:06 server2 cron[948]: [INFO] Cron job completed
+2025 Mar 05 00:36:22 web01 kernel[8160]: [WARNING] Failed password attempt from 202.228.242.187
+2025 Mar 05 00:36:26 db01 nginx[7889]: [INFO] Cron job completed
+2025 Mar 05 00:37:34 db01 sshd[8066]: [WARNING] Cron job failed to start
+2025 Mar 05 00:37:49 server1 postfix[7638]: [ERROR] Disk space running low
+2025 Mar 05 00:38:33 server2 postfix[5015]: [ERROR] Cron process crashed
+2025 Mar 05 00:38:41 db01 postfix[8149]: [ERROR] Cron process crashed
+2025 Mar 05 00:39:23 cache01 kernel[8931]: [INFO] Accepted password for user from 202.228.242.187
+2025 Mar 05 00:41:44 gateway1 postfix[6334]: [ERROR] Disk space running low
+2025 Mar 05 00:46:59 cache01 sshd[5689]: [WARNING] Failed password attempt from 185.13.25.99
+2025 Mar 05 00:47:46 server2 postfix[9404]: [INFO] Cron job completed
+2025 Mar 05 00:48:12 cache01 cron[6344]: [WARNING] Cron job failed to start
+2025 Mar 05 00:50:48 gateway1 sshd[8662]: [CRITICAL] High CPU usage detected
+2025 Mar 05 00:51:56 web01 sshd[4411]: [CRITICAL] High CPU usage detected
+2025 Mar 05 00:53:40 cache01 nginx[3812]: [INFO] Accepted password for user from 202.228.242.187
+2025 Mar 05 00:53:51 server2 dockerd[3109]: [INFO] Accepted password for user from 185.13.25.99
+2025 Mar 05 00:54:34 server1 nginx[826]: [ERROR] Cron process crashed
+2025 Mar 05 01:00:04 cache01 systemd[2635]: [ERROR] Restarted service due to crash
+2025 Mar 05 01:04:19 server1 postfix[5602]: [CRITICAL] Firewall rule updated
+2025 Mar 05 01:05:31 db01 dockerd[9152]: [ERROR] Cron process crashed
+2025 Mar 05 01:06:14 db01 postfix[398]: [WARNING] Cron job failed to start
+2025 Mar 05 01:17:13 web01 dockerd[5486]: [WARNING] Cron job failed to start
+2025 Mar 05 01:17:25 server2 dockerd[3643]: [ERROR] Disk space running low
+2025 Mar 05 01:17:54 db01 systemd[907]: [ERROR] Disk space running low
+2025 Mar 05 01:24:23 gateway1 systemd[9464]: [ERROR] Disk space running low
+2025 Mar 05 01:30:25 gateway1 kernel[2176]: [ERROR] Restarted service due to crash
+2025 Mar 05 01:32:27 web01 dockerd[9591]: [ERROR] Disk space running low
+2025 Mar 05 01:34:59 cache01 sshd[6155]: [INFO] Accepted password for user from 185.13.25.99
+2025 Mar 05 01:35:59 db01 nginx[1736]: [CRITICAL] High CPU usage detected
+2025 Mar 05 01:36:18 server2 kernel[3030]: [WARNING] Failed password attempt from 128.149.199.94
+2025 Mar 05 01:38:41 server2 cron[9279]: [CRITICAL] New SSH key added
+2025 Mar 05 01:44:45 cache01 cron[650]: [WARNING] Failed password attempt from 185.13.25.99
+2025 Mar 05 01:45:38 cache01 dockerd[543]: [WARNING] Failed password attempt from 128.149.199.94
+2025 Mar 05 01:48:42 db01 cron[1934]: [INFO] User session closed
+2025 Mar 05 01:50:22 server1 dockerd[3216]: [INFO] Accepted password for user from 202.228.242.187
+2025 Mar 05 01:51:12 web01 nginx[3625]: [ERROR] Restarted service due to crash
+2025 Mar 05 01:51:43 db01 systemd[4181]: [CRITICAL] New SSH key added
+2025 Mar 05 01:52:02 web01 cron[2418]: [CRITICAL] New SSH key added
+2025 Mar 05 01:56:26 db01 systemd[1514]: [WARNING] Failed password attempt from 128.149.199.94
+2025 Mar 05 01:57:12 server1 dockerd[9846]: [INFO] User session closed
+2025 Mar 05 01:57:43 cache01 kernel[7657]: [ERROR] Restarted service due to crash
+2025 Mar 05 02:00:21 gateway1 sshd[7961]: [INFO] User session closed
+2025 Mar 05 02:01:10 server1 nginx[218]: [ERROR] Restarted service due to crash
+2025 Mar 05 02:02:04 db01 sshd[5933]: [CRITICAL] High CPU usage detected
+2025 Mar 05 02:04:20 cache01 nginx[6100]: [INFO] Accepted password for user from 60.155.85.57
+2025 Mar 05 02:05:39 gateway1 postfix[4534]: [WARNING] Cron job failed to start
+2025 Mar 05 02:09:32 gateway1 dockerd[417]: [ERROR] Disk space running low
+2025 Mar 05 02:21:50 gateway1 nginx[1154]: [ERROR] Cron process crashed
+2025 Mar 05 02:22:47 web01 cron[5563]: [CRITICAL] Firewall rule updated
+2025 Mar 05 02:24:00 db01 cron[9833]: [INFO] Accepted password for user from 60.155.85.57
+2025 Mar 05 02:24:26 server2 kernel[1694]: [INFO] Cron job completed
+2025 Mar 05 02:25:13 gateway1 nginx[8468]: [CRITICAL] High CPU usage detected
+2025 Mar 05 02:28:28 server1 kernel[9593]: [INFO] Accepted password for user from 185.13.25.99
+2025 Mar 05 02:30:39 server1 systemd[8769]: [CRITICAL] Firewall rule updated
+2025 Mar 05 02:32:02 db01 cron[7500]: [INFO] Cron job completed
+2025 Mar 05 02:33:30 cache01 nginx[7455]: [INFO] User session closed
+2025 Mar 05 02:40:16 web01 kernel[3325]: [INFO] User session closed
+2025 Mar 05 02:54:19 cache01 sshd[3989]: [INFO] Cron job completed
+2025 Mar 05 03:02:49 server2 dockerd[5736]: [ERROR] Cron process crashed
+2025 Mar 05 03:06:24 db01 postfix[4355]: [ERROR] Disk space running low
+2025 Mar 05 03:06:25 db01 systemd[6079]: [INFO] Accepted password for user from 109.76.118.92
+2025 Mar 05 03:06:54 server2 dockerd[913]: [CRITICAL] High CPU usage detected
+2025 Mar 05 03:08:47 db01 kernel[5400]: [WARNING] Cron job failed to start
+2025 Mar 05 03:09:24 web01 systemd[2954]: [INFO] Accepted password for user from 109.76.118.92
+2025 Mar 05 03:13:09 server2 postfix[2834]: [INFO] Cron job completed
+2025 Mar 05 03:20:06 cache01 systemd[3183]: [CRITICAL] High CPU usage detected
+2025 Mar 05 03:20:36 gateway1 kernel[6557]: [INFO] Cron job completed
+2025 Mar 05 03:21:10 cache01 kernel[7622]: [INFO] Cron job completed
+2025 Mar 05 03:21:53 web01 cron[4464]: [ERROR] Disk space running low
+2025 Mar 05 03:23:29 web01 systemd[9494]: [ERROR] Disk space running low
+2025 Mar 05 03:24:01 server1 nginx[5990]: [ERROR] Cron process crashed
+2025 Mar 05 03:24:01 gateway1 kernel[1389]: [INFO] Cron job completed
+2025 Mar 05 03:25:14 cache01 systemd[7592]: [INFO] Cron job completed
+2025 Mar 05 03:29:30 server2 systemd[8648]: [CRITICAL] New SSH key added
+2025 Mar 05 03:30:14 gateway1 cron[6689]: [WARNING] Failed password attempt from 19.219.82.26
+2025 Mar 05 03:31:36 web01 postfix[9798]: [ERROR] Disk space running low
+2025 Mar 05 03:39:25 gateway1 postfix[7987]: [CRITICAL] High CPU usage detected
+2025 Mar 05 03:41:27 web01 nginx[4820]: [CRITICAL] New SSH key added
+2025 Mar 05 03:42:15 gateway1 postfix[4850]: [WARNING] Cron job failed to start
+2025 Mar 05 03:49:35 db01 dockerd[7577]: [ERROR] Cron process crashed
+2025 Mar 05 03:50:01 db01 kernel[1250]: [CRITICAL] Firewall rule updated
+2025 Mar 05 03:50:15 cache01 nginx[4791]: [CRITICAL] New SSH key added
+2025 Mar 05 03:51:53 server2 sshd[1554]: [CRITICAL] New SSH key added
+2025 Mar 05 03:59:51 server2 dockerd[1912]: [WARNING] Failed password attempt from 185.13.25.99

